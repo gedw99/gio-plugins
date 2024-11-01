@@ -1,6 +1,9 @@
 # https://github.com/gioui-plugins/gio-plugins
 # https://github.com/inkeliz
 
+# my fork for now..
+# https://github.com/gedw99/gio-plugins
+
 # overide his one...
 GOGIO_HASH=1151eac07d84
 
