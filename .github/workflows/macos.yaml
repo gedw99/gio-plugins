@@ -24,8 +24,8 @@ jobs:
         run: go test -v ./...
       - name: Build
         run: |
-          make 
-      - name: Archive  binary
+          make webviewer-build-macos
+      - name: Archive binary
         uses: actions/upload-artifact@v4
         with:
           name: binaryname-macos-arm64
