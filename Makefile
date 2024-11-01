@@ -21,11 +21,11 @@ dep:
 	# v0.6.1-0.20240607083507-1151eac07d84
 	# 1151eac07d84
 	# https://github.com/gioui/gio/releases/tag/v0.7.1
-	cd ./.. && git clone https://github.com/gioui/gio -b $(GOGIO_HASH)
+	cd ./.. && git clone https://github.com/gioui/gio -b v0.7.1
 
 	# The sub make files assume gio cmd is installed
 	# https://github.com/gioui/gio-cmd/blob/main/go.mod
-	go install gioui.org/cmd/gogio@latest
+	#go install gioui.org/cmd/gogio@latest
 
 
 dep-del:
@@ -37,6 +37,11 @@ auth-run:
 	# does not work...
 	cd auth/demo && go mod tidy
 	cd auth/demo && go run .
+auth-build:
+	# NOT working..
+	cd auth/demo/ && go get gioui.org/cmd/gogio
+	cd auth/demo && go mod tidy
+	cd auth/demo/ && $(MAKE) macos
 
 explorer-run:
 	# works on mac
@@ -47,6 +52,9 @@ hyperlink-run:
 	# works on mac
 	cd hyperlink/demo && go mod tidy
 	cd hyperlink/demo && go run .
+hyperlink-build:
+	cd hyperlink/demo/ && go get gioui.org/cmd/gogio
+	cd hyperlink/demo/ && $(MAKE) macos
 
 safedata-run-standalone:
 	# works on mac really well.
