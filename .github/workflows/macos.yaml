@@ -22,7 +22,7 @@ jobs:
           cache: true
       - name: Build
         run: |
-          make webviewer-build-macos
+          make dep webviewer-build-macos
       - name: Archive binary
         uses: actions/upload-artifact@v4
         with:

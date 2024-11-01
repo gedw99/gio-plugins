@@ -2,6 +2,8 @@
 
 TODO...
 
+make dep idempotent !!
+
 
 1. Get all dependencies pulled in by the root make, so that anyone can build.
 
